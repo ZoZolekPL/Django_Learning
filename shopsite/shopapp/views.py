@@ -11,7 +11,7 @@ def product_list(request, category_slug=None):
         category = get_object_or_404(Categories,
                                      slug = category_slug)
         products = products.filter(category=category)
-    return  render(request, 'shopapp/html/Products_list.html', {'category':category,
+    return  render(request, 'shopapp/html/products_list.html', {'category':category,
                                                                 'categories':categories,
                                                                 'products':products})
 
@@ -22,5 +22,5 @@ def products_details(request, id, slug):
                                 available=True)
 
     return render(request,
-                  'shopapp/html/Products_Detail.html',
+                  'shopapp/html/products_detail.html',
                   {'product':product})
